@@ -1,0 +1,15 @@
+
+<div>
+    <!--This would be the entire "section" including the title text and any results-->
+    <div class="section" data-ng-repeat="section in model.items">
+        <!--Just the header area (left column)-->
+        <div class="header">{{section.title}}</div>
+        <!--right column with the items-->
+        <div class="items">
+            <div class="item-row" data-ng-repeat="item in section.items">
+                <img ng-src="{{item.img || section.img}}"/>
+                {{item.text}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+
+body {
+    padding: 30px;
+}
+
+.spotlight-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff;
+    border: 1px solid #000000;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}

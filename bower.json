@@ -1,0 +1,17 @@
+{
+  "author": "Jason Aden",
+  "name": "angular-spotlight",
+  "description": "Spotlight-type search for AngularJS",
+  "version": "0.1.1",
+  "homepage": "http://github.com/jasonaden/angular-spotlight",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular-spotlight"
+  },
+  "dependencies": {
+    "angular": "~1.2.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.3"
+  }
+}
