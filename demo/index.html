@@ -8,13 +8,12 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Demo - angular-spotlight</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <link rel="stylesheet" href="../src/angular-spotlight.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Demo - angular-spotlight</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../demo/css/demo.css">
 
 </head>
 <body ng-app="angularSpotlightDemo">
@@ -25,9 +24,67 @@
 
 <div data-ng-controller="AppCtrl">
 
-    <div class="spotlight-button" angular-spotlight="model.items">0</div>
+	<!--
+	<div class="spotlight-button" angular-spotlight="model.items">0</div>
+	<input class="spotlight-input" type="text" angular-spotlight="model.items"/>
+	-->
 
-    <!--<input class="spotlight-input" type="text" angular-spotlight="model.items"/>-->
+	<div class="container-fluid header">
+		<ul class="menu-bar icons">
+			<li><a href="#"><i class="icon bluetooth"></i></a></li>
+			<li><a href="#"><i class="icon wifi"></i></a></li>
+			<li><a href="#">12:41:59</a></li>
+			<li><a href="#"><i class="icon volume"></i></a></li>
+			<li class="active"><a href="#"><i class="icon spotlight"></i></a></li>
+			<li><a href="#"><i class="icon notification"></i></a></li>
+		</ul>
+	</div><!--/.container.header -->
+
+	<div class="spotlight-search">
+		<div class="input">
+			<input type="text" placeholder="test" />
+			<span>Spotlight</span>
+		</div><!--/.input -->
+		<div class="results">
+			<ul class="section no-preview">
+				<li>
+					<a href="#">
+						<span>Show All in Finder</span>
+						<div class="result"></div>
+					</a>
+				</li>
+			</ul>
+			<ul class="section lbl top-hit">
+				<li>
+					<a href="#">
+						<span>test.jpg</span>
+						<div class="result"></div>
+					</a>
+				</li>
+			</ul>
+			<ul class="section lbl folders">
+				<li>
+					<a href="#">
+						<span>test.jpg</span>
+						<div class="result"></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span>test02.jpg</span>
+						<div class="result"></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span>test-y.jpg</span>
+						<div class="result"></div>
+					</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
 
 </div>
 
