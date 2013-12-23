@@ -198,6 +198,7 @@ h1,h2,h3,h4,h5,p {@include font-smoothing}
 					}
 				}
 			}
+			&.no-preview li .result {display:none !important}
 			&.lbl {
 				li {
 					&:first-of-type:before {
@@ -212,7 +213,20 @@ h1,h2,h3,h4,h5,p {@include font-smoothing}
 					&:hover:first-of-type:before {color:#fff}
 				}
 				&.top-hit li:first-of-type:before {content:"Top Hit"}
-				&.folders li:first-of-type:before {content:"Folders"}
+				&.folders {
+					li {
+						&:first-of-type:before {content:"Folders"}
+						a {
+							span {margin-left:24px}
+							&:before {
+								content:"";
+								position:absolute;
+								@include results-icon-sprite;
+								margin-top:1px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

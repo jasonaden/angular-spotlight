@@ -173,6 +173,8 @@ h1, h2, h3, h4, h5, p {
           .spotlight-search .results ul.section li a:hover .result {
             display: block;
             opacity: 1; }
+      .spotlight-search .results ul.section.no-preview li .result {
+        display: none !important; }
       .spotlight-search .results ul.section.lbl li:first-of-type:before {
         content: "label";
         font-size: 11px;
@@ -187,6 +189,15 @@ h1, h2, h3, h4, h5, p {
         content: "Top Hit"; }
       .spotlight-search .results ul.section.lbl.folders li:first-of-type:before {
         content: "Folders"; }
+      .spotlight-search .results ul.section.lbl.folders li a span {
+        margin-left: 24px; }
+      .spotlight-search .results ul.section.lbl.folders li a:before {
+        content: "";
+        position: absolute;
+        background: url("../img/results-icons.png");
+        height: 16px;
+        width: 16px;
+        margin-top: 1px; }
 
 .footer .copyright {
   margin: 0 0 0 1em;
