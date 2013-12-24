@@ -1,5 +1,10 @@
 $link:#000;
 
+/* 
+we should use autoprefixer instead of the following garbage
+https://github.com/ai/autoprefixer
+*/
+
 @mixin border-radius($radius) {
 	-webkit-border-radius:$radius;
 		 -moz-border-radius:$radius;
@@ -37,6 +42,7 @@ $link:#000;
 					font-smoothing:antialiased;
 						 font-smooth:always;
 }
+
 @mixin ul-nav {
 	list-style:none;
 	margin:0;
@@ -248,9 +254,8 @@ a {text-decoration:none}
 		background:#000;
 		position:absolute;
 		left:45%;
-		-webkit-transition:height 1s;
+		@include transition(height 1s);
 		-webkit-transform-origin:center 8px;
-
 		@include border-radius(15px);
 		&:nth-child(1)  {opacity:0.08}
 		&:nth-child(2)  {-webkit-transform:rotate(30deg);opacity:0.167}
@@ -266,9 +271,9 @@ a {text-decoration:none}
 		&:nth-child(12) {-webkit-transform:rotate(330deg);opacity:1}
 	}
 }
-@-webkit-keyframes spin {
+@-webkit-keyframes spin { 
 	from {-webkit-transform:rotate(0deg)}
-	to {-webkit-transform:rotate(360deg)}
+		to {-webkit-transform:rotate(360deg)} 
 }
 
 

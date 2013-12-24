@@ -1,3 +1,7 @@
+/* 
+we should use autoprefixer instead of the following garbage
+https://github.com/ai/autoprefixer
+*/
 /* ------------ Base Styles ------------ */
 body { padding: 0; margin: 0; background: #333; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; font-smooth: always; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
@@ -46,7 +50,7 @@ a { text-decoration: none; }
 .spinner-wrapper { position: absolute; z-index: 10; top: 80px; margin-left: 10px; }
 
 .spinner { height: 16px; width: 16px; margin: -50px auto 0; opacity: 0.6; -webkit-animation: spin 0.8s steps(12, end) infinite; }
-.spinner i { height: 5px; width: 2px; margin-left: 0px; display: block; background: #000; position: absolute; left: 45%; -webkit-transition: height 1s; -webkit-transform-origin: center 8px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
+.spinner i { height: 5px; width: 2px; margin-left: 0px; display: block; background: #000; position: absolute; left: 45%; -webkit-transition: height 1s; -moz-transition: height 1s; -ms-transition: height 1s; -o-transition: height 1s; transition: height 1s; -webkit-transform-origin: center 8px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
 .spinner i:nth-child(1) { opacity: 0.08; }
 .spinner i:nth-child(2) { -webkit-transform: rotate(30deg); opacity: 0.167; }
 .spinner i:nth-child(3) { -webkit-transform: rotate(60deg); opacity: 0.25; }
