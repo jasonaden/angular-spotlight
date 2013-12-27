@@ -1,9 +1,8 @@
 $link:#000;
 
-/* 
-we should use autoprefixer instead of the following garbage
-https://github.com/ai/autoprefixer
-*/
+// we should use autoprefixer instead of the vendor prefix mixins
+// https://github.com/ai/autoprefixer
+
 
 @mixin border-radius($radius) {
 	-webkit-border-radius:$radius;
@@ -42,7 +41,6 @@ https://github.com/ai/autoprefixer
 					font-smoothing:antialiased;
 						 font-smooth:always;
 }
-
 @mixin ul-nav {
 	list-style:none;
 	margin:0;
@@ -54,8 +52,8 @@ https://github.com/ai/autoprefixer
 }
 @mixin menu-icon-sprite {
 	background:url('../img/menu-icons.png');
-	height:22px;
-	width:21px
+	height:21px;
+	width:23px
 }
 @mixin results-icon-sprite {
 	background:url('../img/results-icons.png');
@@ -78,9 +76,9 @@ a {text-decoration:none}
 
 // header styles
 .header {
-	height:22px;
-	background:linear-gradient(to bottom, #FFFFFF 0%,#C3C3C3 100%);
-	@include box-shadow(0 0 20px -1px rgba(0,0,0,0.5), 0 1px 0 rgba(0,0,0,0.5));
+	height:21px;
+	background:linear-gradient(to bottom, #E5E5E5 0%,#A0A0A0 100%);
+	@include box-shadow(inset 0  1px 1px rgba(255,255,255,0.4), 0 0 20px -1px rgba(0,0,0,0.5),1px 1px 1px #000);
 	.menu-bar {
 		@include ul-nav;
 		&.icons {float:right}
@@ -88,63 +86,71 @@ a {text-decoration:none}
 			@include font-smoothing;
 			font-weight:400;
 			font-size:14px;
-			line-height:22px;
-			height:22px;
-			&:last-of-type {margin-right:10px}
+			line-height:21px;
+			height:21px;
+			&:last-of-type {margin-right:16px}
 			&:active a,&.active a {
-				background:linear-gradient(to bottom, #7693F5 0%,#265AF2 100%);
+				background:linear-gradient(to bottom, #6485F5 0%,#1E51EA 100%);
 				color:#fff;
-				i.icon {background-image:url('../img/menu-icons_active.png')}
+				i.icon {
+					background-image:url('../img/menu-icons_active.png');
+					@include drop-shadow(1px 1px rgba(255,255,255,0));
+					&.spotlight:after {
+						position:absolute;
+						top:21px;
+						content:"";
+						width:36px;
+						height:1px;
+						margin-left:-11px;
+						background:#174BE8;
+					}
+				}
 			}
 			a {
 				cursor:default;
-				height:22px;
-				padding:0 6px;
-				color:#333;
+				height:21px;
+				color:#000;
+				&#clock {padding:0 7px 0 8px}
 				i.icon {
 					@include menu-icon-sprite;
+					@include drop-shadow(1px 1px rgba(255,255,255,0.3));
 					display:inline-block;
-					&.notification {background-position:-105px 0}
-					&.spotlight    {background-position:-84px  0}
-					&.volume       {background-position:-63px  0}
-					&.wifi         {background-position:-21px  0}
-					&.bluetooth    {background-position:0      0}
+					&.notification {background-position:-582px  0;width:21px;padding:0 4px 0 5px}
+					&.spotlight    {background-position:-547px  0;width:16px;padding:0 9px 0 11px}
+					&.volume       {background-position:-516px  0;width:17px;padding:0 6px 0 7px}
+					&.battery      {background-position:-361px  0;width:21px}
+					&.wifi         {background-position:-412px  -1px;width:23px;padding:0 3px 0 4px}
+					&.bluetooth    {background-position:-382px  0;width:13px;padding:0 8px 0 9px}
 				}
 				&:hover {text-decoration:none}
-
 			}
 		}
 	}
 }
 
 .spotlight-search {
-	margin:1px 43px 0 0;
+	margin-top:1px;
+	margin-right:46px;
 	width:430px;
 	float:right;
 	.input {
-		background:linear-gradient(to bottom, #7693F5 0%,#265AF2 100%);
-		height:33px;
-		@include box-shadow(0 1px 0 rgba(0,0,0,0.5));
+		background:linear-gradient(to bottom, #6485F5 0%,#1E51EA 100%);
+		height:30px;
+		@include box-shadow(0 1px 0 rgba(0, 0, 0, 0.5));
 		span {
 			float:right;
 			display:inline-block;
 			color:#fff;
-			font-weight:700;
 			font-size:13px;
-			text-shadow:0 0px 2px rgba(0,0,0,0.4);
-			line-height:32px;
-		}
-		i.loading {
-			float:left;
-			height:16px;
-			width:16px;
-			background:url('../img/loading.gif');
+			font-weight:700;
+			text-shadow:0 0px 2px rgba(0,0,0,0.5);
+			line-height:30px;
 		}
 		input {
 			float:right;
 			margin:4px 1em 0;
-			padding:5px 10px;
-			border:1px solid rgba(0,0,0,0.6);
+			padding:3px 10px 4px;
+			border:1px solid #3E559F;
 			width:286px;
 			@include border-radius(1em);
 			&:focus {outline-width:0}
@@ -155,10 +161,9 @@ a {text-decoration:none}
 		font-size:12px;
 		margin:0;
 		background:url('../img/results-bg.gif') repeat-y right #fff;
-		border:1px solid #AAA;
 		padding:5px 0;
 		@include border-radius(0 0 5px 5px);
-		@include box-shadow(0 4px 8px rgba(0,0,0,0.3));
+		@include box-shadow(inset 0 0 0 1px rgba(0,0,0,0.2),0 4px 8px rgba(0,0,0,0.4));
 		ul.section {
 			margin:6px 0;
 			padding:0;
@@ -168,7 +173,7 @@ a {text-decoration:none}
 					padding:0 0 0 125px;
 					display:block;
 					color:#333;
-					line-height:20px;
+					line-height:21px;
 					.result {
 						display:none;
 						position:absolute;
@@ -234,13 +239,13 @@ a {text-decoration:none}
 	}
 }
 
-.spinner-wrapper {
+.loading-wrapper {
 	position:absolute;
 	z-index:10;
 	top:80px;
 	margin-left:10px;
 }
-.spinner {
+.loading {
 	height:16px;
 	width:16px;
 	margin:-50px auto 0;
@@ -258,9 +263,9 @@ a {text-decoration:none}
 		-webkit-transform-origin:center 8px;
 		@include border-radius(15px);
 		&:nth-child(1)  {opacity:0.08}
-		&:nth-child(2)  {-webkit-transform:rotate(30deg);opacity:0.167}
-		&:nth-child(3)  {-webkit-transform:rotate(60deg);opacity:0.25}
-		&:nth-child(4)  {-webkit-transform:rotate(90deg);opacity:0.33}
+		&:nth-child(2)  {-webkit-transform:rotate(30deg); opacity:0.167}
+		&:nth-child(3)  {-webkit-transform:rotate(60deg); opacity:0.25}
+		&:nth-child(4)  {-webkit-transform:rotate(90deg); opacity:0.33}
 		&:nth-child(5)  {-webkit-transform:rotate(120deg);opacity:0.4167}
 		&:nth-child(6)  {-webkit-transform:rotate(150deg);opacity:0.5}
 		&:nth-child(7)  {-webkit-transform:rotate(180deg);opacity:0.583}
@@ -274,25 +279,6 @@ a {text-decoration:none}
 @-webkit-keyframes spin { 
 	from {-webkit-transform:rotate(0deg)}
 		to {-webkit-transform:rotate(360deg)} 
-}
-
-
-
-// footer styles
-.footer {
-	.copyright {margin:0 0 0 1em;display:inline-block}
-}
-
-
-/* ------------ Media Queries ------------ */
-@media all and (max-width:991px) {
-
-}
-@media all and (max-width:480px) {
-
-}
-@media all and (max-width:350px) {
-
 }
 
 

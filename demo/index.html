@@ -16,11 +16,11 @@
 	<link rel="stylesheet" href="../demo/css/demo.css">
 
 </head>
-<body ng-app="angularSpotlightDemo">
+<body ng-app="angularSpotlightDemo" onload="updateClock(); setInterval('updateClock()', 1000 )">
 <!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+
 
 <div data-ng-controller="AppCtrl">
 
@@ -31,23 +31,24 @@
 
 	<div class="container-fluid header">
 		<ul class="menu-bar icons">
+			<li><a href="#"><i class="icon battery"></i></a></li>
 			<li><a href="#"><i class="icon bluetooth"></i></a></li>
 			<li><a href="#"><i class="icon wifi"></i></a></li>
-			<li><a href="#">12:41:59</a></li>
+			<li><a href="#" id="clock">12:41:59</a></li>
 			<li><a href="#"><i class="icon volume"></i></a></li>
 			<li class="active"><a href="#"><i class="icon spotlight"></i></a></li>
 			<li><a href="#"><i class="icon notification"></i></a></li>
-		</ul>
+		</ul> 
 	</div><!--/.container.header -->
 
 	<div class="spotlight-search">
 		<div class="input">
-			<div class="spinner-wrapper">
-				<div class="spinner">
+			<div class="loading-wrapper">
+				<div class="loading">
 					<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
 				</div>
 			</div>
-			<input type="text" placeholder="test" />
+			<input type="search"  />
 			<span>Spotlight</span>
 		</div><!--/.input -->
 		<div class="results">
@@ -87,8 +88,8 @@
 					</a>
 				</li>
 			</ul>
+		</div><!--/.results -->
 
-		</div>
 	</div>
 
 </div>
@@ -100,6 +101,7 @@
 <script src="../src/angular-spotlight.js"></script>
 
 <script src="app.js"></script>
+<script src="clock.js"></script>
 
 </body>
 </html>
