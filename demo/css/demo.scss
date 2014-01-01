@@ -65,7 +65,8 @@ $link:#000;
 body {
 	padding:0;
 	margin:0;
-	background:#333;
+
+	background:#434343;
 	@include font-smoothing;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
@@ -78,7 +79,7 @@ a {text-decoration:none}
 .header {
 	height:21px;
 	background:linear-gradient(to bottom, #E5E5E5 0%,#A0A0A0 100%);
-	@include box-shadow(inset 0  1px 1px rgba(255,255,255,0.4), 0 0 20px -1px rgba(0,0,0,0.5),1px 1px 1px #000);
+	@include box-shadow(inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 20px 3px rgba(0, 0, 0, 0.5), 0px 0px 0px 1px black);
 	.menu-bar {
 		@include ul-nav;
 		&.icons {float:right}
@@ -90,19 +91,19 @@ a {text-decoration:none}
 			height:21px;
 			&:last-of-type {margin-right:16px}
 			&:active a,&.active a {
-				background:linear-gradient(to bottom, #6485F5 0%,#1E51EA 100%);
+				background:linear-gradient(to bottom,#6485F5 0%,#275AF2 100%);
 				color:#fff;
 				i.icon {
 					background-image:url('../img/menu-icons_active.png');
 					@include drop-shadow(1px 1px rgba(255,255,255,0));
 					&.spotlight:after {
+						background:#1E4CE8;
 						position:absolute;
 						top:21px;
 						content:"";
 						width:36px;
 						height:1px;
 						margin-left:-11px;
-						background:#174BE8;
 					}
 				}
 			}
@@ -115,12 +116,12 @@ a {text-decoration:none}
 					@include menu-icon-sprite;
 					@include drop-shadow(1px 1px rgba(255,255,255,0.3));
 					display:inline-block;
-					&.notification {background-position:-582px  0;width:21px;padding:0 4px 0 5px}
-					&.spotlight    {background-position:-547px  0;width:16px;padding:0 9px 0 11px}
-					&.volume       {background-position:-516px  0;width:17px;padding:0 6px 0 7px}
-					&.battery      {background-position:-361px  0;width:21px}
-					&.wifi         {background-position:-412px  -1px;width:23px;padding:0 3px 0 4px}
-					&.bluetooth    {background-position:-382px  0;width:13px;padding:0 8px 0 9px}
+					&.notification {background-position:-582px    0;width:21px;padding:0 4px 0  5px}
+					&.spotlight    {background-position:-547px    0;width:16px;padding:0 9px 0 11px}
+					&.volume       {background-position:-516px    0;width:17px;padding:0 6px 0  7px}
+					&.battery      {background-position:-361px    0;width:21px}
+					&.wifi         {background-position:-412px -1px;width:23px;padding:0 3px 0 4px}
+					&.bluetooth    {background-position:-382px    0;width:13px;padding:0 8px 0 9px}
 				}
 				&:hover {text-decoration:none}
 			}
@@ -135,9 +136,10 @@ a {text-decoration:none}
 	//float:right;
     position: absolute;
 	.input {
-		background:linear-gradient(to bottom, #6485F5 0%,#1E51EA 100%);
+		background:linear-gradient(to bottom,#6485F5 0%,#275AF2 100%);
 		height:30px;
-		@include box-shadow(0 1px 0 rgba(0, 0, 0, 0.5));
+		border-bottom:1px solid #1E4CE8;
+		@include box-shadow(0 1px 0 rgba(0,0,0,0.5),0 4px 8px rgba(0,0,0,0.4));
 		span {
 			float:right;
 			display:inline-block;
@@ -149,10 +151,13 @@ a {text-decoration:none}
 		}
 		input {
 			float:right;
-			margin:4px 1em 0;
-			padding:3px 10px 4px;
+			margin:4px 12px 0 15px;
+			padding:4px 10px;
 			border:1px solid #3E559F;
-			width:286px;
+			width:291px;
+			height:22px;
+			line-height:12px;
+			font-size:12px;
 			@include border-radius(1em);
 			&:focus {outline-width:0}
 		}
@@ -162,51 +167,86 @@ a {text-decoration:none}
 		font-size:12px;
 		margin:0;
 		background:url('../img/results-bg.gif') repeat-y right #fff;
-		padding:5px 0;
+		padding:0 0 5px 0;
 		@include border-radius(0 0 5px 5px);
-		@include box-shadow(inset 0 0 0 1px rgba(0,0,0,0.2),0 4px 8px rgba(0,0,0,0.4));
+		@include box-shadow(inset 0 0 0 1px #B5B5B5, 0 4px 8px rgba(0, 0, 0, 0.2));
 		ul.section {
-			margin:6px 0;
-			padding:0;
+			margin:0;
+			padding:9px 0 0;
 			list-style:none;
 			li {
 				a {
 					padding:0 0 0 125px;
 					display:block;
 					color:#333;
-					line-height:21px;
+					line-height:20px;
+					cursor:default;
 					.result {
 						display:block;
 						position:absolute;
-						margin:-75px 0 0 -565px;
+						margin:-75px 0 0 -531px;
 						color:#000;
-						border:1px solid #AAA;
-						background:linear-gradient(to bottom, #FDFDFD 0%,#EAEAEA 100%);
-						width:400px;
+						border:1px solid #B5B5B5;
+						background:linear-gradient(to bottom,#FDFDFD 0%,#EAEAEA 100%);
+						width:372px;
 						height:120px;
 						padding:10px;
 						opacity:0;
 						@include border-radius(5px);
+						@include drop-shadow(0 0 10px rgba(0,0,0,0.2));
+						@include box-shadow(inset 0 0 0 1px #fff);
+						i {
+							@include transition(all 0.2s cubic-bezier(.17,.67,.83,.67));
+							float:left;
+							display:block;
+							margin-right:10px;
+							&.folder {
+								@include results-icon-sprite;
+								background-position:0 -16px;
+								width:112px;
+								height:90px;
+							}
+						}
+						.details {
+							float:left;
+							div {
+								margin:5px 0;
+								&.title {font-size:16px;font-weight:700;margin-top:0}
+								&.type {}
+							}
+						}
 						&:after {
 							content:"";
 							border-style:solid;
 							border-color:transparent transparent transparent #F5F5F5;
 							border-width:12px;
-							position: absolute;
-							left: 420px;
-							top: 52px;
-							@include drop-shadow(1px 0 0 #888);
+							position:absolute;
+							left:391px;
+							top:52px;
+							@include drop-shadow(1px 0 0 #B5B5B5);
+							@include box-shadow(inset 0 0 1px #000);
 						}
 					}
 					&:hover {
-						background:linear-gradient(to bottom, #7693F5 0%,#265AF2 100%);
+						background:linear-gradient(to bottom,#7693F5 0%,#265AF2 100%);
 						color:#fff;
 						text-decoration:none;
-						.result {display:block;opacity:1}
+						.result {
+							display:block;
+							opacity:1;
+						}
 					}
 				}
 			}
-			&.no-preview li .result {display:none !important}
+			&.no-preview {
+				padding:6px 0 0;
+				li {
+					a {
+						line-height:17px;
+						.result {display:none !important}
+					}
+				}
+			}
 			&.lbl {
 /*				li {
 					&:first-of-type:before {
