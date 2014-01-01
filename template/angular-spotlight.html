@@ -1,10 +1,76 @@
 
-<div>
-    <!--This would be the entire "section" including the title text and any results-->
+<div class="spotlight-search" ng-style="{display: isOpen()&&'block' || 'none', top: position.top+'px', left: position.left+'px'}">
+    <div class="input">
+        <div class="loading-wrapper">
+            <div class="loading">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+        </div>
+        <input type="search"/>
+        <span>Spotlight</span>
+    </div><!--/.input -->
+    <div class="results">
+        <ul class="section no-preview">
+            <li>
+                <a href="#">
+                    <span>Show All in Finder</span>
+                    <div class="result"></div>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="section lbl" data-ng-class="{'top-hit': $first}" data-ng-repeat="results in resultSet">
+            <li data-ng-repeat="item in results.items">
+                <a href="#">
+                    <span>{{item.text}}</span>
+                    <div class="result" data-ng-switch="item.type">
+                        <div data-ng-switch-when="url">
+                            <iframe height="768" width="1024" style="-webkit-transform: scale(.39); margin: -235px 0 0 -312px;" src="http://www.ng-conf.org"  frameborder="0"></iframe>
+                            <!--<iframe height="768" width="1024" style="-webkit-transform: scale(.39); margin: -235px 0 0 -312px;" ng-src="{{item.url}}"  frameborder="0"></iframe>-->
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+<!--        <ul class="section lbl top-hit">
+            <li>
+                <a href="#">
+                    <span>test.jpg</span>
+                    <div class="result"></div>
+                </a>
+            </li>
+        </ul>
+        <ul class="section lbl folders">
+            <li>
+                <a href="#">
+                    <span>test.jpg</span>
+                    <div class="result"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>test02.jpg</span>
+                    <div class="result"></div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>test-y.jpg</span>
+                    <div class="result" style="display: block;">
+                        <iframe height="768" width="1024" style="-webkit-transform: scale(.39); margin: -235px 0 0 -312px;" src="http://www.ng-conf.org"  frameborder="0"></iframe>
+                    </div>
+                </a>
+            </li>-->
+        </ul>
+    </div><!--/.results -->
+
+    <!--
+    <div>
+        &lt;!&ndash;This would be the entire "section" including the title text and any results&ndash;&gt;
     <div class="section" data-ng-repeat="section in model.items">
-        <!--Just the header area (left column)-->
+        &lt;!&ndash;Just the header area (left column)&ndash;&gt;
         <div class="header">{{section.title}}</div>
-        <!--right column with the items-->
+        &lt;!&ndash;right column with the items&ndash;&gt;
         <div class="items">
             <div class="item-row" data-ng-repeat="item in section.items">
                 <img ng-src="{{item.img || section.img}}"/>
@@ -13,3 +79,7 @@
         </div>
     </div>
 </div>
+-->
+
+</div>
+

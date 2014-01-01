@@ -129,10 +129,11 @@ a {text-decoration:none}
 }
 
 .spotlight-search {
-	margin-top:1px;
-	margin-right:46px;
+	//margin-top:1px;
+	//margin-right:46px;
 	width:430px;
-	float:right;
+	//float:right;
+    position: absolute;
 	.input {
 		background:linear-gradient(to bottom, #6485F5 0%,#1E51EA 100%);
 		height:30px;
@@ -175,7 +176,7 @@ a {text-decoration:none}
 					color:#333;
 					line-height:21px;
 					.result {
-						display:none;
+						display:block;
 						position:absolute;
 						margin:-75px 0 0 -565px;
 						color:#000;
@@ -207,7 +208,7 @@ a {text-decoration:none}
 			}
 			&.no-preview li .result {display:none !important}
 			&.lbl {
-				li {
+/*				li {
 					&:first-of-type:before {
 						content:"label";
 						font-size:11px;
@@ -218,9 +219,9 @@ a {text-decoration:none}
 						text-align:right;
 					}
 					&:hover:first-of-type:before {color:#fff}
-				}
+				}*/
 				&.top-hit li:first-of-type:before {content:"Top Hit"}
-				&.folders {
+/*				&.folders {
 					li {
 						&:first-of-type:before {content:"Folders"}
 						a {
@@ -233,7 +234,7 @@ a {text-decoration:none}
 							}
 						}
 					}
-				}
+				}*/
 			}
 		}
 	}

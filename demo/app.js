@@ -12,7 +12,7 @@
             {title: 'First set', icon: 'first.png', displayProperty: 'text', items: [
                 {id: 1, text: 'First item'},
                 {id: 2, text: 'Second item'},
-                {id: 3, text: 'Third item', icon: 'first-custom.png'}
+                {id: 3, text: 'Third item', type: 'url', icon: 'first-custom.png', url: 'http://www.ng-conf.org'}
             ]},
             {title: 'Second set', icon: 'second.png', displayProperty: 'text', items: [
                 {id: 1, text: '1st item'},
