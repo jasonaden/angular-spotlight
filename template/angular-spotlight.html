@@ -18,18 +18,22 @@
                 </a>
             </li>
         </ul>
-
         <ul class="section lbl" data-ng-class="{'top-hit': $first}" data-ng-repeat="results in resultSet">
+            <angular-spotlight-item item="item" data-ng-repeat="item in results.items"></angular-spotlight-item>
+        </ul>
+        <ul class="section lbl web" data-ng-class="{'top-hit': $first}" data-ng-repeat="results in resultSet">
             <angular-spotlight-item item="item" data-ng-repeat="item in results.items"></angular-spotlight-item>
             <li>
                 <a href="#">
                     <span>ng-conf</span>
                     <div class="result website">
-                        <iframe class="page-display" src="http://www.ng-conf.org"  frameborder="0"></iframe>
+                        <iframe class="page-display" src="http://www.ng-conf.org" frameborder="0"></iframe>
                     </div>
                 </a>
             </li>
-           <li>
+        </ul>
+        <ul class="section lbl images">
+            <li>
                 <a href="#">
                     <span>yeoman-logo</span>
                     <div class="result image">
@@ -45,6 +49,8 @@
                     </div>
                 </a>
             </li>
+        </ul>
+        <ul class="section lbl folders">
             <li>
                 <a href="#">
                     <span>angular-spotlight</span>

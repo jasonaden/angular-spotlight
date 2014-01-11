@@ -54,8 +54,14 @@ a { text-decoration: none; }
 .spotlight-search .results ul.section.lbl li:hover:first-of-type:before { color: #fff; }
 .spotlight-search .results ul.section.lbl.top-hit li:first-of-type:before { content: "Top Hit"; }
 .spotlight-search .results ul.section.lbl.folders li:first-of-type:before { content: "Folders"; }
-.spotlight-search .results ul.section.lbl.folders li a span { margin-left: 24px; }
+.spotlight-search .results ul.section.lbl.folders li a > span { margin-left: 24px; }
 .spotlight-search .results ul.section.lbl.folders li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; margin-top: 1px; }
+.spotlight-search .results ul.section.lbl.web li:first-of-type:before { content: "Websites"; }
+.spotlight-search .results ul.section.lbl.web li a span { margin-left: 24px; }
+.spotlight-search .results ul.section.lbl.web li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; background-position: -16px 0; margin-top: 1px; }
+.spotlight-search .results ul.section.lbl.images li:first-of-type:before { content: "Images"; }
+.spotlight-search .results ul.section.lbl.images li a span { margin-left: 24px; }
+.spotlight-search .results ul.section.lbl.images li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; background-position: -32px 0; margin-top: 1px; }
 
 .loading-wrapper { position: absolute; z-index: 10; top: 7px; margin-left: 10px; }
 
