@@ -1,84 +1,160 @@
 /* ------------ Base Styles ------------ */
+/* line 65, demo.scss */
 body { padding: 0; margin: 0; background: #434343; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; font-smooth: always; font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
+/* line 74, demo.scss */
 a { text-decoration: none; }
 
 /* ------------ App Styles ------------ */
+/* line 79, demo.scss */
 .header { height: 21px; background: linear-gradient(to bottom, #e5e5e5 0%, #a0a0a0 100%); -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 20px 3px rgba(0, 0, 0, 0.5), 0px 0px 0px 1px black; -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 20px 3px rgba(0, 0, 0, 0.5), 0px 0px 0px 1px black; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 0 20px 3px rgba(0, 0, 0, 0.5), 0px 0px 0px 1px black; }
+/* line 83, demo.scss */
 .header .menu-bar { list-style: none; margin: 0; padding: 0; }
+/* line 48, demo.scss */
 .header .menu-bar li { float: left; }
+/* line 50, demo.scss */
 .header .menu-bar li a { display: block; }
+/* line 85, demo.scss */
 .header .menu-bar.icons { float: right; }
+/* line 86, demo.scss */
 .header .menu-bar li { -webkit-font-smoothing: antialiased; font-smoothing: antialiased; font-smooth: always; font-weight: 400; font-size: 14px; line-height: 21px; height: 21px; }
+/* line 92, demo.scss */
 .header .menu-bar li:last-of-type { margin-right: 16px; }
+/* line 93, demo.scss */
 .header .menu-bar li:active a, .header .menu-bar li.active a { background: linear-gradient(to bottom, #6485f5 0%, #275af2 100%); color: #fff; }
+/* line 96, demo.scss */
 .header .menu-bar li:active a i.icon, .header .menu-bar li.active a i.icon { background-image: url("../img/menu-icons_active.png"); -webkit-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0)); -moz-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0)); -ms-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0)); -o-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0)); filter: drop-shadow(1px 1px rgba(255, 255, 255, 0)); }
+/* line 99, demo.scss */
 .header .menu-bar li:active a i.icon.spotlight:after, .header .menu-bar li.active a i.icon.spotlight:after { background: #1E4CE8; position: absolute; top: 21px; content: ""; width: 36px; height: 1px; margin-left: -11px; }
+/* line 110, demo.scss */
 .header .menu-bar li a { cursor: default; height: 21px; color: #000; }
+/* line 114, demo.scss */
 .header .menu-bar li a#clock { padding: 0 7px 0 8px; }
+/* line 115, demo.scss */
 .header .menu-bar li a i.icon { background: url("../img/menu-icons.png"); height: 21px; width: 23px; -webkit-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0.3)); -moz-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0.3)); -ms-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0.3)); -o-filter: drop-shadow(1px 1px rgba(255, 255, 255, 0.3)); filter: drop-shadow(1px 1px rgba(255, 255, 255, 0.3)); display: inline-block; }
+/* line 119, demo.scss */
 .header .menu-bar li a i.icon.notification { background-position: -582px    0; width: 21px; padding: 0 4px 0  5px; }
+/* line 120, demo.scss */
 .header .menu-bar li a i.icon.spotlight { background-position: -547px    0; width: 16px; padding: 0 9px 0 11px; }
+/* line 121, demo.scss */
 .header .menu-bar li a i.icon.volume { background-position: -516px    0; width: 17px; padding: 0 6px 0  7px; }
-.header .menu-bar li a i.icon.battery { background-position: -361px    0; width: 21px; }
+/* line 122, demo.scss */
+.header .menu-bar li a i.icon.battery { background-position: -353px    0; width: 23px; padding: 0 5px 0  4px; }
+/* line 123, demo.scss */
 .header .menu-bar li a i.icon.wifi { background-position: -412px -1px; width: 23px; padding: 0 3px 0 4px; }
+/* line 124, demo.scss */
 .header .menu-bar li a i.icon.bluetooth { background-position: -382px    0; width: 13px; padding: 0 8px 0 9px; }
+/* line 126, demo.scss */
 .header .menu-bar li a:hover { text-decoration: none; }
 
+/* line 132, demo.scss */
 .spotlight-search { width: 430px; position: absolute; }
+/* line 138, demo.scss */
 .spotlight-search .input { background: linear-gradient(to bottom, #6485f5 0%, #275af2 100%); height: 30px; border-bottom: 1px solid #1E4CE8; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.4); }
+/* line 143, demo.scss */
 .spotlight-search .input span { float: right; display: inline-block; color: #fff; font-size: 13px; font-weight: 700; text-shadow: 0 0px 2px rgba(0, 0, 0, 0.5); line-height: 30px; }
+/* line 152, demo.scss */
 .spotlight-search .input input { float: right; margin: 4px 12px 0 15px; padding: 4px 10px; border: 1px solid #3E559F; width: 291px; height: 22px; line-height: 12px; font-size: 12px; -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; }
+/* line 162, demo.scss */
 .spotlight-search .input input:focus { outline-width: 0; }
+/* line 166, demo.scss */
 .spotlight-search .results { font-size: 12px; margin: 0; background: url("../img/results-bg.gif") repeat-y right white; padding: 0 0 5px 0; -webkit-border-radius: 0 0 5px 5px; -moz-border-radius: 0 0 5px 5px; border-radius: 0 0 5px 5px; -webkit-box-shadow: inset 0 0 0 1px #b5b5b5, 0 4px 8px rgba(0, 0, 0, 0.2); -moz-box-shadow: inset 0 0 0 1px #b5b5b5, 0 4px 8px rgba(0, 0, 0, 0.2); box-shadow: inset 0 0 0 1px #b5b5b5, 0 4px 8px rgba(0, 0, 0, 0.2); }
+/* line 173, demo.scss */
 .spotlight-search .results ul.section { margin: 0; padding: 9px 0 0; list-style: none; }
+/* line 178, demo.scss */
 .spotlight-search .results ul.section li a { padding: 0 0 0 125px; display: block; color: #333; line-height: 20px; cursor: default; }
+/* line 185, demo.scss */
 .spotlight-search .results ul.section li a .result { display: none; }
+/* line 187, demo.scss */
 .spotlight-search .results ul.section li a:hover, .spotlight-search .results ul.section li a .active { background: linear-gradient(to bottom, #7693f5 0%, #265af2 100%); color: #fff; text-decoration: none; }
+/* line 191, demo.scss */
 .spotlight-search .results ul.section li a:hover .result, .spotlight-search .results ul.section li a .active .result { display: block; position: absolute; margin: -75px 0 0 -531px; color: #000; border: 1px solid #B5B5B5; background: linear-gradient(to bottom, #fdfdfd 0%, #eaeaea 100%); width: 372px; height: 120px; padding: 10px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); -moz-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); -ms-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); -o-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); -webkit-box-shadow: inset 0 0 0 1px white; -moz-box-shadow: inset 0 0 0 1px white; box-shadow: inset 0 0 0 1px white; }
+/* line 204, demo.scss */
 .spotlight-search .results ul.section li a:hover .result i, .spotlight-search .results ul.section li a .active .result i { float: left; display: block; margin-right: 10px; }
+/* line 208, demo.scss */
 .spotlight-search .results ul.section li a:hover .result i.folder, .spotlight-search .results ul.section li a .active .result i.folder { background: url("../img/results-icons.png"); height: 16px; width: 16px; background-position: 0 -16px; width: 112px; height: 90px; }
+/* line 216, demo.scss */
 .spotlight-search .results ul.section li a:hover .result .details, .spotlight-search .results ul.section li a .active .result .details { float: left; }
+/* line 218, demo.scss */
 .spotlight-search .results ul.section li a:hover .result .details div, .spotlight-search .results ul.section li a .active .result .details div { margin: 5px 0; }
+/* line 220, demo.scss */
 .spotlight-search .results ul.section li a:hover .result .details div.title, .spotlight-search .results ul.section li a .active .result .details div.title { font-size: 16px; font-weight: 700; margin-top: 0; }
+/* line 225, demo.scss */
 .spotlight-search .results ul.section li a:hover .result.website, .spotlight-search .results ul.section li a .active .result.website { margin: -75px 0 0 -639px; width: 500px; height: 500px; padding: 3px 0 0 0; }
+/* line 230, demo.scss */
 .spotlight-search .results ul.section li a:hover .result.website .page-display, .spotlight-search .results ul.section li a .active .result.website .page-display { -webkit-transform: scale(0.5); width: 990px; height: 998px; position: absolute; margin: -50% 0 0 -50%; padding-left: 6px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+/* line 239, demo.scss */
 .spotlight-search .results ul.section li a:hover .result.website:after, .spotlight-search .results ul.section li a .active .result.website:after { left: 499px; }
+/* line 242, demo.scss */
 .spotlight-search .results ul.section li a:hover .result.image, .spotlight-search .results ul.section li a .active .result.image { height: 100%; width: 385px; padding: 2px 5px 3px 2px; }
+/* line 246, demo.scss */
 .spotlight-search .results ul.section li a:hover .result.image img, .spotlight-search .results ul.section li a .active .result.image img { border: 1px solid #ccc; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; width: 385px; height: auto; }
+/* line 254, demo.scss */
 .spotlight-search .results ul.section li a:hover .result:after, .spotlight-search .results ul.section li a .active .result:after { content: ""; border-style: solid; border-color: transparent transparent transparent #F5F5F5; border-width: 12px; position: absolute; left: 391px; top: 52px; -webkit-filter: drop-shadow(1px 0 0 #b5b5b5); -moz-filter: drop-shadow(1px 0 0 #b5b5b5); -ms-filter: drop-shadow(1px 0 0 #b5b5b5); -o-filter: drop-shadow(1px 0 0 #b5b5b5); filter: drop-shadow(1px 0 0 #b5b5b5); -webkit-box-shadow: inset 0 0 1px black; -moz-box-shadow: inset 0 0 1px black; box-shadow: inset 0 0 1px black; }
+/* line 281, demo.scss */
 .spotlight-search .results ul.section.no-preview { padding: 6px 0 0; }
+/* line 284, demo.scss */
 .spotlight-search .results ul.section.no-preview li a { line-height: 17px; }
+/* line 286, demo.scss */
 .spotlight-search .results ul.section.no-preview li a .result { display: none !important; }
+/* line 293, demo.scss */
 .spotlight-search .results ul.section.lbl li:first-of-type:before { content: "label"; font-size: 11px; position: absolute; color: #8C8C8C; line-height: 20px; width: 100px; text-align: right; }
+/* line 304, demo.scss */
 .spotlight-search .results ul.section.lbl li:hover:first-of-type:before { color: #fff; }
+/* line 306, demo.scss */
 .spotlight-search .results ul.section.lbl.top-hit li:first-of-type:before { content: "Top Hit"; }
+/* line 311, demo.scss */
 .spotlight-search .results ul.section.lbl.folders li:first-of-type:before { content: "Folders"; }
+/* line 313, demo.scss */
 .spotlight-search .results ul.section.lbl.folders li a > span { margin-left: 24px; }
+/* line 314, demo.scss */
 .spotlight-search .results ul.section.lbl.folders li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; margin-top: 1px; }
+/* line 327, demo.scss */
 .spotlight-search .results ul.section.lbl.web li:first-of-type:before { content: "Websites"; }
+/* line 329, demo.scss */
 .spotlight-search .results ul.section.lbl.web li a span { margin-left: 24px; }
+/* line 330, demo.scss */
 .spotlight-search .results ul.section.lbl.web li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; background-position: -16px 0; margin-top: 1px; }
+/* line 344, demo.scss */
 .spotlight-search .results ul.section.lbl.images li:first-of-type:before { content: "Images"; }
+/* line 346, demo.scss */
 .spotlight-search .results ul.section.lbl.images li a span { margin-left: 24px; }
+/* line 347, demo.scss */
 .spotlight-search .results ul.section.lbl.images li a:before { content: ""; position: absolute; background: url("../img/results-icons.png"); height: 16px; width: 16px; background-position: -32px 0; margin-top: 1px; }
 
+/* line 363, demo.scss */
 .loading-wrapper { position: absolute; z-index: 10; top: 7px; margin-left: 10px; }
 
+/* line 369, demo.scss */
 .loading { height: 16px; width: 16px; margin: 0 auto; opacity: 0.6; -webkit-animation: spin 0.5s steps(12, end) infinite; }
+/* line 375, demo.scss */
 .loading i { height: 5px; width: 2px; margin-left: 0px; display: block; background: #000; position: absolute; left: 45%; -webkit-transition: height 1s; -moz-transition: height 1s; -ms-transition: height 1s; -o-transition: height 1s; transition: height 1s; -webkit-transform-origin: center 8px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
+/* line 386, demo.scss */
 .loading i:nth-child(1) { opacity: 0.08; }
+/* line 387, demo.scss */
 .loading i:nth-child(2) { -webkit-transform: rotate(30deg); opacity: 0.167; }
+/* line 388, demo.scss */
 .loading i:nth-child(3) { -webkit-transform: rotate(60deg); opacity: 0.25; }
+/* line 389, demo.scss */
 .loading i:nth-child(4) { -webkit-transform: rotate(90deg); opacity: 0.33; }
+/* line 390, demo.scss */
 .loading i:nth-child(5) { -webkit-transform: rotate(120deg); opacity: 0.4167; }
+/* line 391, demo.scss */
 .loading i:nth-child(6) { -webkit-transform: rotate(150deg); opacity: 0.5; }
+/* line 392, demo.scss */
 .loading i:nth-child(7) { -webkit-transform: rotate(180deg); opacity: 0.583; }
+/* line 393, demo.scss */
 .loading i:nth-child(8) { -webkit-transform: rotate(210deg); opacity: 0.67; }
+/* line 394, demo.scss */
 .loading i:nth-child(9) { -webkit-transform: rotate(240deg); opacity: 0.75; }
+/* line 395, demo.scss */
 .loading i:nth-child(10) { -webkit-transform: rotate(270deg); opacity: 0.833; }
+/* line 396, demo.scss */
 .loading i:nth-child(11) { -webkit-transform: rotate(300deg); opacity: 0.9167; }
+/* line 397, demo.scss */
 .loading i:nth-child(12) { -webkit-transform: rotate(330deg); opacity: 1; }
 
-@-webkit-keyframes spin { from { -webkit-transform: rotate(0deg); }
+@-webkit-keyframes spin { /* line 401, demo.scss */
+  from { -webkit-transform: rotate(0deg); }
+  /* line 402, demo.scss */
   to { -webkit-transform: rotate(360deg); } }
