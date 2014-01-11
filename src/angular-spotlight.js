@@ -25,23 +25,23 @@
 
             function calculatePosition(tiedTo, popupSize) {
                 var tiedToPosition = $position.position(tiedTo);
-                    //popupSize = $position.offset(popup);
                 return {
                     left: (tiedToPosition.left + tiedToPosition.width) - popupSize.width,
                     top: tiedToPosition.top + tiedToPosition.height + 1
                 }
-
             }
 
             return {
                 require: '?ngModel',
                 link: function (scope, element, attrs, ngModel) {
                     var popup = angular.element('<angular-spotlight-popup></angular-spotlight-popup>'),
+                        fetchFn,
                         popupSize,
                         $body = $document.find('body'),
                         newScope = scope.$new(),
                         showIt = false;
 
+                    /*** Setup the popup ***/
                     // Tie to bindings
                     popup.attr({
                         position: 'position',
@@ -49,27 +49,26 @@
                         close: 'close()',
                         'result-set': 'resultSet'
                     });
-
                     // Apply ngModelController to popup
                     popup.data('$ngModelController', ngModel);
 
+                    /*** Setup a new scope for the popup ***/
                     angular.extend(newScope, {
                         position: {},
                         isOpen: function () {return showIt;},
                         close: function () {showIt = false;},
-                        resultSet: $parse(attrs.angularSpotlight)(scope)
+                        resultSet: [] //$parse(attrs.angularSpotlight)(scope)
                     });
-
                     $body.append($compile(popup)(newScope));
 
-                    // Open the element when we click it
+                    // Show/hide popup on click of spotlight button
                     element.on('click', function (evt) {
                         evt.stopPropagation();
                         toggleShow(evt);
                     });
 
+                    /* Show and hide the popup */
                     function toggleShow (evt) {
-
                         // Store the size of the popup
                         if (!popupSize) {
                             popup.css({display:'block'});
@@ -85,9 +84,19 @@
                         newScope.$digest();
                     }
 
+                    /*** SEARCHING ***/
+                    if (attrs.fetch) {
+                        if (ng.isFunction(scope[attrs.fetch])) {
+                            fetchFn = scope[attrs.fetch];
+                        } else {
+                            // Support for static data?
+                        }
+                    }
                     // Wire up to listen for changes
                     ngModel.$viewChangeListeners.push(function () {
-                        console.log(ngModel.$viewValue);
+                        fetchFn(ngModel.$viewValue).then(function (data) {
+                            newScope.resultSet = data;
+                        })
                     })
                 }
             };
@@ -115,6 +124,7 @@
 
                     // Don't let Click event get to document which would close the results
                     element.on('click', function (evt) {
+                        element.find('input')[0].focus();
                         evt.stopPropagation();
                     });
 
