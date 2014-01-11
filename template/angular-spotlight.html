@@ -21,23 +21,53 @@
 
         <ul class="section lbl" data-ng-class="{'top-hit': $first}" data-ng-repeat="results in resultSet">
             <angular-spotlight-item item="item" data-ng-repeat="item in results.items"></angular-spotlight-item>
-
             <li>
                 <a href="#">
-                    <span>test</span>
+                    <span>ng-conf</span>
+                    <div class="result website">
+                        <iframe class="page-display" src="http://www.ng-conf.org"  frameborder="0"></iframe>
+                    </div>
+                </a>
+            </li>
+           <li>
+                <a href="#">
+                    <span>yeoman-logo</span>
+                    <div class="result image">
+                        <img src="img/yeoman-logo.png" />
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>yeoman</span>
+                    <div class="result image">
+                        <img src="img/yeoman.gif" />
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span>angular-spotlight</span>
                     <div class="result">
                         <i class="folder"></i>
                         <div class="details">
-                            <div class="title">test</div>
+                            <div class="title">angular-spotlight</div>
                             <div class="type">Folder</div>
                             <div class="size">
                                 <span>2 KB</span>
                                 <span>2 items</span>
                             </div>
                             <div class="modified">Last modified Dec 22, 2013, 8:14:26 PM</div>
-
                         </div>
                     </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="section no-preview">
+            <li>
+                <a href="#">
+                    <span>Spotlight Preferences...</span>
+                    <div class="result"></div>
                 </a>
             </li>
         </ul>
