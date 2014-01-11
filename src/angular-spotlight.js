@@ -32,9 +32,31 @@
             }
 
             return {
-                require: '?ngModel',
-                link: function (scope, element, attrs, ngModel) {
-                    var popup = angular.element('<angular-spotlight-popup></angular-spotlight-popup>'),
+                require: ['?ngModel', 'angularSpotlight'],
+                controller: function () {
+                    var selectedItem, activeItem;
+
+                    ng.extend(this, {
+                        setSelected: function (item) {
+                            selectedItem = item;
+                        },
+                        getSelected: function () {
+                            return selectedItem;
+                        },
+                        setActive: function (item) {
+                            if (activeItem) activeItem.$active = false;
+                            if (item) item.$active = true;
+                            activeItem = item;
+                        },
+                        getActive: function () {
+                            return activeItem;
+                        }
+
+                    });
+                },
+                link: function (scope, element, attrs, ctrls) {
+                    var ngModel = ctrls[0], ctrl = ctrls[1],
+                        popup = angular.element('<angular-spotlight-popup></angular-spotlight-popup>'),
                         fetchFn,
                         popupSize,
                         $body = $document.find('body'),
@@ -51,6 +73,7 @@
                     });
                     // Apply ngModelController to popup
                     popup.data('$ngModelController', ngModel);
+                    popup.data('$angularSpotlightController', ctrl);
 
                     /*** Setup a new scope for the popup ***/
                     angular.extend(newScope, {
@@ -67,6 +90,24 @@
                         toggleShow(evt);
                     });
 
+                    // Keep keyboard handler so we can turn it off
+                    var keyboardHandler = function (evt) {
+                        switch (evt.which) {
+                            case 32:
+                                if (evt.metaKey && evt.shiftKey) {
+                                    toggleShow(evt);
+                                    evt.preventDefault();
+                                }
+                                break;
+                        }
+                    };
+
+                    $document.bind('keydown', keyboardHandler);
+
+                    scope.$on('$destroy', function(){
+                        $document.unbind('click', keyboardHandler);
+                    });
+
                     /* Show and hide the popup */
                     function toggleShow (evt) {
                         // Store the size of the popup
@@ -80,6 +121,8 @@
                         if (showIt) {
                             // Position the spotlight -- Do this each time it's opened.
                             ng.extend(newScope.position, calculatePosition(element, popupSize));
+                        } else {
+                            ctrl.setActive(undefined);
                         }
                         newScope.$digest();
                     }
@@ -147,10 +190,20 @@
                 }
             }
         }])
-        .directive('angularSpotlightMatch', [function () {
+        .directive('angularSpotlightItem', [function () {
             return {
                 restrict: 'E',
-                templateUrl: '/template/angular-spotlight-match.html'
+                templateUrl: '../template/angular-spotlight-item.html',
+                replace: true,
+                scope: {
+                    item: '='
+                },
+                require: ['^ngModel', '^angularSpotlight'],
+                link: function (scope, element, attrs, ctrls) {
+                    var ngModel = ctrls[0], ctrl = ctrls[1];
+
+                    scope.setActive = ctrl.setActive;
+                }
             }
         }])
         /* $position service from ui-bootstrap project */
